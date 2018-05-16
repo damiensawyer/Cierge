@@ -40,7 +40,9 @@ namespace DemoClient
                 options.SlidingExpiration = true;
             })
             .AddOpenIdConnect("DemoCierge", options => {
-                options.Authority = "https://cierge.azurewebsites.net";
+                //options.Authority = "https://cierge.azurewebsites.net";
+                    options.RequireHttpsMetadata = false;
+                options.Authority = "http://localhost:9000"; // also edit in layout.cshtml
                 options.ClientId = "client-app";
                 options.ResponseType = OpenIdConnectResponseType.IdTokenToken;
                 options.SaveTokens = true; // Make false to reduce cookie size but lose JWTs

@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "RsaKeyGenerator": {
+      "commandName": "Project",
+      "commandLineArgs": "private C:\\TEMP\\PRIV"
+    }
+  }
+}

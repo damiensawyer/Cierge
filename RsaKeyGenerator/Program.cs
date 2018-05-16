@@ -18,12 +18,16 @@ namespace RsaKeyGenerator
                     if (args[i].Contains("private"))
                     {
                         pathPublicPrivate = args[i + 1];
+                        PrintOrWrite(pathPublicPrivate, RSA.ToJsonString(true));
                     }
                     else if (args[i].Contains("public"))
                     {
                         pathPublic = args[i + 1];
+                        PrintOrWrite(pathPublic, RSA.ToJsonString(false));
                     }
                 }
+
+                
             }
             else
             {
