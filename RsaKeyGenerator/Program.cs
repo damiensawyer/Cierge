@@ -18,19 +18,21 @@ namespace RsaKeyGenerator
                     if (args[i].Contains("private"))
                     {
                         pathPublicPrivate = args[i + 1];
+                        PrintOrWrite(pathPublicPrivate, RSA.ToJsonString(true));
                     }
                     else if (args[i].Contains("public"))
                     {
                         pathPublic = args[i + 1];
+                        PrintOrWrite(pathPublic, RSA.ToJsonString(false));
                     }
                 }
             }
             else
             {
-                Console.WriteLine("Input path (w/filename) to save the public key to (or leave empty to print) >>>");
+                Console.WriteLine("Input 'public {filename}' to save the public key to (or leave empty to print) >>>");
                 PrintOrWrite(Console.ReadLine(), RSA.ToJsonString(false));
 
-                Console.WriteLine("Input path (w/filename) to save the public & private keys to (or leave empty to print) >>>");
+                Console.WriteLine("Input 'private {filename}' to save the public & private keys to (or leave empty to print) >>>");
                 PrintOrWrite(Console.ReadLine(), RSA.ToJsonString(true));
             }
 
