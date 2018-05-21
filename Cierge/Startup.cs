@@ -155,7 +155,7 @@ namespace Cierge
                     };
 
                     options.Audience = Configuration["Cierge:Audience"];
-
+                    options.Authority = Configuration["Cierge:Issuer"];
                     if (Env.IsDevelopment())
                         options.RequireHttpsMetadata = false;
                 });
