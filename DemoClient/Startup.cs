@@ -40,11 +40,12 @@ namespace DemoClient
                 options.SlidingExpiration = true;
             })
             .AddOpenIdConnect("DemoCierge", options => {
-                options.Authority = "https://cierge.azurewebsites.net";
+                options.Authority = "http://localhost:9000";
+                options.RequireHttpsMetadata = false;
                 options.ClientId = "client-app";
                 options.ResponseType = OpenIdConnectResponseType.IdTokenToken;
                 options.SaveTokens = true; // Make false to reduce cookie size but lose JWTs
-                options.GetClaimsFromUserInfoEndpoint = true;
+                options.GetClaimsFromUserInfoEndpoint = false; // fails when this is true. Gives 401 against localhost:9000/api/userinfo.
                 // !! ADDING FIELD: this will include FavColor in included claims   
                 options.ClaimActions.MapUniqueJsonKey("favColor", "favColor");
                 options.Scope.Add("profile");

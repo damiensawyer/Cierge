@@ -38,7 +38,7 @@
                     @if (User.Identity.IsAuthenticated)
                     {
                         <li><a asp-controller="Home" asp-action="AdminArea">Admin Area</a></li>
-                        <li><a href="https://cierge.azurewebsites.net/manage/edituserinfo">@User.Identity.Name</a></li>
+                        <li><a href="http://localhost:9000/manage/edituserinfo">@User.Identity.Name</a></li>
                         <li><a asp-controller="Account" asp-action="Logout">Logout</a></li>
                     }
                     else
